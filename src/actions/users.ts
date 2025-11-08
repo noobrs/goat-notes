@@ -20,7 +20,7 @@ export const signInAction = async (email: string, password: string) => {
   }
 };
 
-export const logOutAction = async () => {
+export const signOutAction = async () => {
   try {
     const { auth } = await createClient();
 
