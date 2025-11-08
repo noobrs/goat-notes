@@ -9,7 +9,7 @@ import { useTransition } from "react";
 import { Button } from "./ui/button";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
-import { loginAction, signUpAction } from "@/actions/users";
+import { signInAction, signUpAction } from "@/actions/users";
 
 type Props = {
   type: "login" | "signUp";
@@ -30,7 +30,7 @@ function AuthForm({ type }: Props) {
 
       let errorMessage;
       if (isLoginForm) {
-        errorMessage = (await loginAction(email, password)).errorMessage;
+        errorMessage = (await signInAction(email, password)).errorMessage;
       } else {
         errorMessage = (await signUpAction(email, password)).errorMessage;
       }
